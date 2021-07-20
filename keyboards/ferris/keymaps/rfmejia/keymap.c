@@ -130,27 +130,25 @@ enum combos {
   COMBO_RCBR,
 };
 
-const uint16_t PROGMEM combo_esc[]  = {KC_Q, HM_A, COMBO_END};
-const uint16_t PROGMEM combo_squo[] = {KC_F, HM_S, COMBO_END};
-const uint16_t PROGMEM combo_dquo[] = {KC_P, HM_T, COMBO_END};
+const uint16_t PROGMEM combo_squo[] = {KC_W, HM_R, COMBO_END};
+const uint16_t PROGMEM combo_dquo[] = {KC_F, HM_S, COMBO_END};
+const uint16_t PROGMEM combo_esc[]  = {KC_P, HM_T, COMBO_END};
 
-const uint16_t PROGMEM combo_coln[] = {KC_SCLN, HM_O, COMBO_END};
-const uint16_t PROGMEM combo_eql[]  = {KC_L, HM_N, COMBO_END};
+const uint16_t PROGMEM combo_coln[] = {KC_L, HM_N, COMBO_END};
 const uint16_t PROGMEM combo_mins[] = {KC_U, HM_E, COMBO_END};
+const uint16_t PROGMEM combo_eql[]  = {KC_Y, HM_I, COMBO_END};
 
 const uint16_t PROGMEM combo_lcbr[] = {KC_B, KC_G, COMBO_END};
 const uint16_t PROGMEM combo_rcbr[] = {KC_J, KC_M, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
-    [COMBO_ESC] = COMBO(combo_esc, KC_ESC),
-    [COMBO_SQUO] = COMBO(combo_squo, KC_QUOT),
-    [COMBO_DQUO] = COMBO(combo_dquo, KC_DQUO),
-
     [COMBO_COLN] = COMBO(combo_coln, KC_COLN),
-    [COMBO_EQL] = COMBO(combo_eql, KC_EQL),
-    [COMBO_MINS] = COMBO(combo_mins, KC_MINS),
-
+    [COMBO_DQUO] = COMBO(combo_dquo, KC_DQUO),
+    [COMBO_EQL]  = COMBO(combo_eql, KC_EQL),
+    [COMBO_ESC]  = COMBO(combo_esc, KC_ESC),
     [COMBO_LCBR] = COMBO(combo_lcbr, KC_LCBR),
+    [COMBO_MINS] = COMBO(combo_mins, KC_MINS),
     [COMBO_RCBR] = COMBO(combo_rcbr, KC_RCBR),
+    [COMBO_SQUO] = COMBO(combo_squo, KC_QUOT),
 };
 #endif
