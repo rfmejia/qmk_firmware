@@ -9,35 +9,36 @@ enum layers {
     _ADJ  // System and layer-hold keys
 };
 
-// Home row mod tap keys
-#define HM_A LSFT_T(KC_A)
-#define HM_R LCTL_T(KC_R)
-#define HM_S LALT_T(KC_S)
-#define HM_T LGUI_T(KC_T)
-#define HM_N RGUI_T(KC_N)
-#define HM_E RALT_T(KC_E)
-#define HM_I RCTL_T(KC_I)
-#define HM_O RSFT_T(KC_O)
+// Home row mod tap keys (GACS)
+#define HM_A LGUI_T(KC_A)
+#define HM_R LALT_T(KC_R)
+#define HM_S LCTL_T(KC_S)
+#define HM_T LSFT_T(KC_T)
+#define HM_N RSFT_T(KC_N)
+#define HM_E RCTL_T(KC_E)
+#define HM_I RALT_T(KC_I)
+#define HM_O RGUI_T(KC_O)
 
 // Layer tap keys
-#define LT_D    LT(_NAV, KC_D)
-#define LT_H    LT(_MOU, KC_H)
-#define LT_Z    LT(_SYM, KC_Z)
-#define LT_SLSH LT(_SYM, KC_SLSH)
+#define LT_D    LT(_SYM, KC_D)
+#define LT_H    LT(_SYM, KC_H)
+#define LT_C    LT(_NAV, KC_C)
+#define LT_COMM LT(_MOU, KC_COMM)
+
 #define LT_ENT  LT(_ADJ, KC_ENT)
 #define LT_BSPC LT(_NUM, KC_BSPC)
 #define LT_SPC  LT(_NUM, KC_SPC)
 #define LT_TAB  LT(_ADJ, KC_TAB)
 
 // Home row mods tap keys for _NUM
-#define HM_1 LSFT_T(KC_1)
-#define HM_2 LCTL_T(KC_2)
-#define HM_3 LALT_T(KC_3)
-#define HM_4 LGUI_T(KC_4)
-#define HM_7 RGUI_T(KC_7)
-#define HM_8 RALT_T(KC_8)
-#define HM_9 RCTL_T(KC_9)
-#define HM_0 RSFT_T(KC_0)
+#define HM_1 LGUI_T(KC_1)
+#define HM_2 LALT_T(KC_2)
+#define HM_3 LCTL_T(KC_3)
+#define HM_4 LSFT_T(KC_4)
+#define HM_7 RSFT_T(KC_7)
+#define HM_8 RCTL_T(KC_8)
+#define HM_9 RALT_T(KC_9)
+#define HM_0 RGUI_T(KC_0)
 
 // GUI-ed numbers (to jump i3 workspaces, etc.)
 #define LGUI_1 LGUI(KC_1)
@@ -76,14 +77,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_DEF] =  LAYOUT(
 KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,        KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,
 HM_A,    HM_R,    HM_S,    HM_T,    KC_G,        KC_M,    HM_N,    HM_E,    HM_I,    HM_O,
-LT_Z,    KC_X,    KC_C,    LT_D,    KC_V,        KC_K,    LT_H,    KC_COMM, KC_DOT,  LT_SLSH,
+KC_Z,    KC_X,    LT_C,    LT_D,    KC_V,        KC_K,    LT_H,    LT_COMM, KC_DOT,  KC_SLSH,
                            LT_ENT,  LT_BSPC,     LT_SPC,  LT_TAB
 ),
 
 [_SYM] = LAYOUT(
-KC_GRV,  KC_QUOT, KC_COMM, KC_DOT,  KC_SLSH,     KC_BSLS, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC,
+XXXXXXX, KC_GRV,  KC_TILD, KC_UNDS, KC_LBRC,     KC_RBRC, KC_PLUS, KC_BSLS, KC_PIPE, XXXXXXX,
 KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,     KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,
-KC_TILD, KC_DQUO, KC_LT,   KC_GT,   KC_QUES,     KC_PIPE, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR,
+XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                            TO_DEF,  _______,     _______, TO_DEF
 ),
 
@@ -96,22 +97,22 @@ LALT_1,  LALT_2,  LALT_3,  LALT_4,  LALT_5,      LALT_6,  LALT_7,  LALT_8,  LALT
 
 [_NAV] = LAYOUT(
 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_INS,
-KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, XXXXXXX,     KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_DEL,
+KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,     KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_DEL,
 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                            TO_DEF,  _______,     _______, TO_DEF
 ),
 
 [_MOU] = LAYOUT(
 KC_WH_U, KC_BTN2, KC_MS_U, KC_BTN1, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-KC_WH_D, KC_MS_L, KC_MS_D, KC_MS_R, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+KC_WH_D, KC_MS_L, KC_MS_D, KC_MS_R, XXXXXXX,     XXXXXXX, KC_RSFT, KC_RCTL, KC_RALT, KC_RGUI,
 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                            TO_DEF,  _______,     _______, TO_DEF
 ),
 
 [_ADJ] = LAYOUT(
-KC_CAPS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RESET,
-KC_VOLD, KC_VOLU, KC_MUTE, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, KC_BRID, KC_BRIU,
-TO_SYM,  XXXXXXX, XXXXXXX, TO_NAV,  XXXXXXX,     XXXXXXX, TO_MOU,  XXXXXXX, XXXXXXX, TO_SYM,
+XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RESET,
+KC_VOLD, KC_VOLU, KC_MUTE, KC_CAPS, XXXXXXX,     XXXXXXX, KC_CAPS, XXXXXXX, KC_BRID, KC_BRIU,
+XXXXXXX, XXXXXXX, TO_NAV,  TO_SYM,  XXXXXXX,     XXXXXXX, TO_SYM,  TO_MOU,  XXXXXXX, XXXXXXX,
                            XXXXXXX, TO_NUM,      TO_NUM,  XXXXXXX
 )
 };
