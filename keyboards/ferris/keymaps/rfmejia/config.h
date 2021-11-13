@@ -34,18 +34,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // Pick good defaults for enabling homerow modifiers
 #define TAPPING_TERM 200
-#define COMBO_TERM 50
+#define COMBO_TERM 45
 
-// prevent short hold periods being ingerpreted as individual taps when typing quickly
+// Prevent short hold periods being interpreted as individual taps when typing quickly
 #define PERMISSIVE_HOLD
 
-// prevent normau rollover on alphas from accidentally triggering home row mods
+// Prevent normal rollover on alphas from accidentally triggering home row mods
 #define IGNORE_MOD_TAP_INTERRUPT
 
-// prevent accidental repeats of the tap-hold keys when typing quickly
+// Prevent accidental repeats of the tap-hold keys when typing quickly
 #define TAPPING_FORCE_HOLD
 
-/* #define RETRO_TAPPING */
-
-#define COMBO_COUNT 1
-
+#define COMBO_COUNT 27
