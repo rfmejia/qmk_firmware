@@ -34,7 +34,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // Pick good defaults for enabling homerow modifiers
 #define TAPPING_TERM 200
-#define COMBO_TERM 50
+#define COMBO_TERM 45
 
 // Prevent short hold periods being interpreted as individual taps when typing quickly
 #define PERMISSIVE_HOLD
@@ -45,4 +45,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Prevent accidental repeats of the tap-hold keys when typing quickly
 #define TAPPING_FORCE_HOLD
 
-#define COMBO_COUNT 8
+#define COMBO_COUNT 27
