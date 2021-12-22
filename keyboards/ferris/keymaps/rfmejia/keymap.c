@@ -43,7 +43,7 @@ enum layers {
 #define LGUI_9 LGUI(KC_9)
 #define LGUI_0 LGUI(KC_0)
 
-// Alt-ed numbers (to jump tmux/browser tabs, etc.)
+// ALT-ed numbers (to jump tmux/browser tabs, etc.)
 #define LALT_1 LALT(KC_1)
 #define LALT_2 LALT(KC_2)
 #define LALT_3 LALT(KC_3)
@@ -85,8 +85,8 @@ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXX
 ),
 
 [_NAV] = LAYOUT(
-KC_HOME, KC_PGUP, KC_BTN2, KC_BTN1, XXXXXXX,     KC_DOWN, KC_RGHT, KC_MS_D, XXXXXXX, KC_WH_U,
-HM_END,  HM_PGDN, KC_LCTL, KC_LSFT, XXXXXXX,     XXXXXXX, KC_MS_L, KC_MS_U, KC_MS_R, KC_WH_D,
+KC_HOME, KC_PGUP, KC_BTN2, KC_BTN1, XXXXXXX,     KC_DOWN, KC_RGHT, KC_MS_U, XXXXXXX, KC_WH_U,
+HM_END,  HM_PGDN, KC_LCTL, KC_LSFT, XXXXXXX,     XXXXXXX, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_D,
 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     KC_UP,   KC_LEFT, XXXXXXX, XXXXXXX, XXXXXXX,
                            TO_DEF,  _______,     _______, TO_DEF
 ),
@@ -105,7 +105,7 @@ XXXXXXX, XXXXXXX, XXXXXXX, TO_NAV,  XXXXXXX,     XXXXXXX, TO_NAV,  XXXXXXX, XXXX
 +KC_LBRC+KC_RBRC+KC_DQUO+KC_QUOT+KC_ESC-+     +KC_COLN+KC_MINS+KC_EQL-+KC_LPRN+KC_RPRN+
 |       |       |       |    KC_INS     |     |     KC_DEL    |       |       |       |
 +KC_LT--+KC_GT--+KC_GRV-+KC_TILD+KC_BSLS+     +KC_PIPE+KC_UNDS+KC_PLUS+KC_LCBR+KC_RCBR+
-|       |       |       |       |       |     |       |       |       |       |       |
+|       |     KC_MUT  KC_VOLD KC_VOLU   |     |     KC_BRIU KC_BRID   |       |       |
 +-------+-------+-------+-------+-------+     +-------+-------+-------+-------+-------+
                         |       |       |     |       |       |
                         +-------+-------+     +-------+-------+
