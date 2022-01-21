@@ -61,7 +61,7 @@ enum layers {
 #define LT_ENT  LT(_ADJ, KC_ENT)
 #define LT_SPC  LT(_NUM, KC_SPC)
 #define LT_BSPC LT(_NUM, KC_BSPC)
-#define LT_TAB  LT(_ADJ, KC_TAB)
+#define LT_ESC  LT(_ADJ, KC_ESC)
 
 // Layer switching
 #define TO_DEF TO(_DEF)
@@ -74,7 +74,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,        KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,
 HM_A,    HM_R,    HM_S,    HM_T,    KC_G,        KC_M,    HM_N,    HM_E,    HM_I,    HM_O,
 KC_Z,    KC_X,    KC_C,    LT_D,    KC_V,        KC_K,    LT_H,    KC_COMM, KC_DOT,  KC_SLSH,
-                           LT_ENT,  LT_BSPC,     LT_SPC,  LT_TAB
+                           LT_ENT,  LT_BSPC,     LT_SPC,  LT_ESC
 ),
 
 [_NUM] = LAYOUT(
@@ -102,7 +102,7 @@ XXXXXXX, XXXXXXX, XXXXXXX, TO_NAV,  XXXXXXX,     XXXXXXX, TO_NAV,  XXXXXXX, XXXX
 /* Combos
 +-------+-------+-------+-------+-------+     +-------+-------+-------+-------+-------+
 |       |       |       |       |       |     |       |       |       |       |       |
-+KC_LBRC+KC_RBRC+KC_DQUO+KC_QUOT+KC_ESC-+     +KC_COLN+KC_MINS+KC_EQL-+KC_LPRN+KC_RPRN+
++KC_LBRC+KC_RBRC+KC_DQUO+KC_QUOT+KC_TAB-+     +KC_COLN+KC_MINS+KC_EQL-+KC_LPRN+KC_RPRN+
 |       |       |       |    KC_INS     |     |     KC_DEL    |       |       |       |
 +KC_LT--+KC_GT--+KC_GRV-+KC_TILD+KC_BSLS+     +KC_PIPE+KC_UNDS+KC_PLUS+KC_LCBR+KC_RCBR+
 |       |     KC_MUT  KC_VOLD KC_VOLU   |     |     KC_BRIU KC_BRID   |       |       |
@@ -117,7 +117,7 @@ enum combos {
   COMBO_RBRC,
   COMBO_QUOT,
   COMBO_DQUO,
-  COMBO_ESC,
+  COMBO_TAB,
 
   COMBO_LT,
   COMBO_GT,
@@ -211,7 +211,7 @@ combo_t key_combos[COMBO_COUNT] = {
     [COMBO_RBRC] = COMBO(combo_wr, KC_RBRC),
     [COMBO_DQUO] = COMBO(combo_fs, KC_DQUO),
     [COMBO_QUOT] = COMBO(combo_pt, KC_QUOT),
-    [COMBO_ESC]  = COMBO(combo_bg, KC_ESC),
+    [COMBO_TAB]  = COMBO(combo_bg, KC_TAB),
 
     [COMBO_LT]   = COMBO(combo_az, KC_LT),
     [COMBO_GT]   = COMBO(combo_rx, KC_GT),
