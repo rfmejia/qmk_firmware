@@ -2,9 +2,9 @@
 
 enum layers {
     _DEF, // Default Colemak layoup
-    _NUM, // Numbers (including shifted numbers)
-    _NAV, // Key-based navigation
+    _NUM, // Numbers (including shifted-number symbols)
     _SYM, // Symbols
+    _NAV, // Navigation keys
     _ADJ  // System and layer-hold keys
 };
 
@@ -29,8 +29,10 @@ enum layers {
 #define HM_0 RGUI_T(KC_0)
 
 // Home row mods tap keys for _NAV
-#define HM_END  LGUI_T(KC_END)
-#define HM_PGDN LALT_T(KC_PGDN)
+#define HM_TAB  LGUI_T(KC_END)
+#define HM_PGUP LSFT_T(KC_PGUP)
+#define HM_PGDN LCTL_T(KC_PGDN)
+#define HM_END  LALT_T(KC_END)
 
 // GUI-ed numbers (to jump i3 workspaces, etc.)
 #define LGUI_1 LGUI(KC_1)
@@ -96,8 +98,8 @@ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXX
 ),
 
 [_NAV] = LAYOUT(
-KC_HOME, KC_PGUP, KC_BTN2, KC_BTN1, XXXXXXX,     KC_DOWN, KC_RGHT, KC_MS_U, XXXXXXX, KC_WH_U,
-HM_END,  HM_PGDN, KC_LCTL, KC_LSFT, XXXXXXX,     XXXXXXX, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_D,
+XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX, XXXXXXX,
+HM_TAB,  KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,     KC_HOME, HM_PGUP, HM_PGDN, HM_END,  KC_RGUI,
 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     KC_UP,   KC_LEFT, XXXXXXX, XXXXXXX, XXXXXXX,
                            TO_DEF,  _______,     _______, TO_DEF
 ),
