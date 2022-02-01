@@ -61,8 +61,8 @@ enum layers {
 // Layer tap keys
 #define LT_D    LT(_SYM, KC_D)
 #define LT_H    LT(_SYM, KC_H)
-#define LT_C    LT(_NAV, KC_C)
-#define LT_COMM LT(_NAV, KC_COMM)
+#define LT_Z    LT(_NAV, KC_Z)
+#define LT_SLSH LT(_NAV, KC_SLSH)
 #define LT_SPC  LT(_NUM, KC_SPC)
 #define LT_BSPC LT(_NUM, KC_BSPC)
 #define LT_ENT  LT(_ADJ, KC_ENT)
@@ -79,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_DEF] =  LAYOUT(
 KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,        KC_J,    KC_L,    KC_U,    KC_Y,    KC_COLN,
 HM_A,    HM_R,    HM_S,    HM_T,    KC_G,        KC_M,    HM_N,    HM_E,    HM_I,    HM_O,
-KC_Z,    KC_X,    LT_C,    LT_D,    KC_V,        KC_K,    LT_H,    LT_COMM, KC_DOT,  KC_SLSH,
+LT_Z,    KC_X,    KC_C,    LT_D,    KC_V,        KC_K,    LT_H,    KC_COMM, KC_DOT,  LT_SLSH,
                            LT_ENT,  LT_BSPC,     LT_SPC,  LT_ESC
 ),
 
@@ -107,7 +107,7 @@ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     KC_UP,   KC_LEFT, XXXXXXX, XXXX
 [_ADJ] = LAYOUT(
 LALT_1,  LALT_2,  LALT_3,  LALT_4,  LALT_5,      LALT_6,  LALT_7,  LALT_8,  LALT_9,  LALT_0,
 LGUI_1,  LGUI_2,  LGUI_3,  LGUI_4,  LGUI_5,      LGUI_6,  LGUI_7,  LGUI_8,  LGUI_9,  LGUI_0,
-XXXXXXX, XXXXXXX, TO_NAV,  TO_SYM,  XXXXXXX,     XXXXXXX, TO_SYM,  TO_NAV, XXXXXXX,  XXXXXXX,
+TO_NAV,  XXXXXXX, XXXXXXX, TO_SYM,  XXXXXXX,     XXXXXXX, TO_SYM,  XXXXXXX, XXXXXXX, TO_NAV,
                            XXXXXXX, TO_NUM,      TO_NUM,  XXXXXXX
 )
 };
