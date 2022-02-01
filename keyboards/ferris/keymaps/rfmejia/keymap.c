@@ -29,9 +29,9 @@ enum layers {
 #define HM_0 RGUI_T(KC_0)
 
 // Home row mods tap keys for _NAV
-#define HM_TAB  LGUI_T(KC_END)
-#define HM_PGUP LSFT_T(KC_PGUP)
-#define HM_PGDN LCTL_T(KC_PGDN)
+#define HM_TAB  LGUI_T(KC_TAB)
+#define HM_PGDN LSFT_T(KC_PGDN)
+#define HM_PGUP LCTL_T(KC_PGUP)
 #define HM_END  LALT_T(KC_END)
 
 // GUI-ed numbers (to jump i3 workspaces, etc.)
@@ -59,10 +59,10 @@ enum layers {
 #define LALT_0 LALT(KC_0)
 
 // Layer tap keys
-#define LT_D    LT(_NAV, KC_D)
-#define LT_H    LT(_NAV, KC_H)
-#define LT_Z    LT(_SYM, KC_Z)
-#define LT_SLSH LT(_SYM, KC_SLSH)
+#define LT_D    LT(_SYM, KC_D)
+#define LT_H    LT(_SYM, KC_H)
+#define LT_C    LT(_NAV, KC_C)
+#define LT_COMM LT(_NAV, KC_COMM)
 #define LT_SPC  LT(_NUM, KC_SPC)
 #define LT_BSPC LT(_NUM, KC_BSPC)
 #define LT_ENT  LT(_ADJ, KC_ENT)
@@ -79,14 +79,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_DEF] =  LAYOUT(
 KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,        KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,
 HM_A,    HM_R,    HM_S,    HM_T,    KC_G,        KC_M,    HM_N,    HM_E,    HM_I,    HM_O,
-LT_Z,    KC_X,    KC_C,    LT_D,    KC_V,        KC_K,    LT_H,    KC_COMM, KC_DOT,  LT_SLSH,
+KC_Z,    KC_X,    LT_C,    LT_D,    KC_V,        KC_K,    LT_H,    LT_COMM, KC_DOT,  KC_SLSH,
                            LT_ENT,  LT_BSPC,     LT_SPC,  LT_ESC
 ),
 
 [_NUM] = LAYOUT(
 KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,     KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,
 HM_1,    HM_2,    HM_3,    HM_4,    KC_5,        KC_6,    HM_7,    HM_8,    HM_9,    HM_0,
-XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+XXXXXXX, XXXXXXX, KC_MUTE, KC_VOLD, KC_VOLU,     KC_BRIU, KC_BRID, XXXXXXX, XXXXXXX, XXXXXXX,
                            TO_DEF,  _______,     _______, TO_DEF
 ),
 
@@ -98,8 +98,8 @@ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXX
 ),
 
 [_NAV] = LAYOUT(
-XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX, XXXXXXX,
-HM_TAB,  KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,     KC_HOME, HM_PGUP, HM_PGDN, HM_END,  KC_RGUI,
+XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     KC_DOWN, KC_RGHT, XXXXXXX, KC_INS,  KC_DEL,
+HM_TAB,  KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,     KC_HOME, HM_PGDN, HM_PGUP, HM_END,  KC_RGUI,
 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     KC_UP,   KC_LEFT, XXXXXXX, XXXXXXX, XXXXXXX,
                            TO_DEF,  _______,     _______, TO_DEF
 ),
@@ -107,7 +107,7 @@ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     KC_UP,   KC_LEFT, XXXXXXX, XXXX
 [_ADJ] = LAYOUT(
 LALT_1,  LALT_2,  LALT_3,  LALT_4,  LALT_5,      LALT_6,  LALT_7,  LALT_8,  LALT_9,  LALT_0,
 LGUI_1,  LGUI_2,  LGUI_3,  LGUI_4,  LGUI_5,      LGUI_6,  LGUI_7,  LGUI_8,  LGUI_9,  LGUI_0,
-TO_SYM,  XXXXXXX, XXXXXXX, TO_NAV,  XXXXXXX,     XXXXXXX, TO_NAV,  XXXXXXX, XXXXXXX, TO_SYM,
+XXXXXXX, XXXXXXX, TO_NAV,  TO_SYM,  XXXXXXX,     XXXXXXX, TO_SYM,  TO_NAV, XXXXXXX,  XXXXXXX,
                            XXXXXXX, TO_NUM,      TO_NUM,  XXXXXXX
 )
 };
