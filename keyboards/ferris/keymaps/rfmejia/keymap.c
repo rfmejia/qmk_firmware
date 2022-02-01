@@ -77,7 +77,7 @@ enum layers {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_DEF] =  LAYOUT(
-KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,        KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,
+KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,        KC_J,    KC_L,    KC_U,    KC_Y,    KC_COLN,
 HM_A,    HM_R,    HM_S,    HM_T,    KC_G,        KC_M,    HM_N,    HM_E,    HM_I,    HM_O,
 KC_Z,    KC_X,    LT_C,    LT_D,    KC_V,        KC_K,    LT_H,    LT_COMM, KC_DOT,  KC_SLSH,
                            LT_ENT,  LT_BSPC,     LT_SPC,  LT_ESC
@@ -86,12 +86,12 @@ KC_Z,    KC_X,    LT_C,    LT_D,    KC_V,        KC_K,    LT_H,    LT_COMM, KC_D
 [_NUM] = LAYOUT(
 KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,     KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,
 HM_1,    HM_2,    HM_3,    HM_4,    KC_5,        KC_6,    HM_7,    HM_8,    HM_9,    HM_0,
-XXXXXXX, XXXXXXX, KC_MUTE, KC_VOLD, KC_VOLU,     KC_BRIU, KC_BRID, XXXXXXX, XXXXXXX, XXXXXXX,
+XXXXXXX, KC_MUTE, KC_VOLD, KC_VOLU, XXXXXXX,     XXXXXXX, KC_BRIU, KC_BRID, XXXXXXX, XXXXXXX,
                            TO_DEF,  _______,     _______, TO_DEF
 ),
 
 [_SYM] = LAYOUT(
-KC_LBRC, KC_RBRC, KC_DQUO, KC_QUOT, KC_TAB,      KC_COLN, KC_MINS, KC_EQL , KC_LPRN, KC_RPRN,
+KC_LBRC, KC_RBRC, KC_DQUO, KC_QUOT, XXXXXXX,     KC_SCLN, KC_MINS, KC_EQL , KC_LPRN, KC_RPRN,
 KC_LT,   KC_GT,   KC_GRV,  KC_TILD, KC_BSLS,     KC_PIPE, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR,
 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                            TO_DEF,  _______,     _______, TO_DEF
