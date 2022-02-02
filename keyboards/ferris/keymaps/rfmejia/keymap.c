@@ -28,17 +28,6 @@ enum layers {
 #define HM_9 RALT_T(KC_9)
 #define HM_0 RGUI_T(KC_0)
 
-// Home row mods tap keys for _SYM
-#define HM_LT   LGUI_T(KC_LT)
-#define HM_GT   LALT_T(KC_GT)
-#define HM_GRV  LCTL_T(KC_GRV)
-#define HM_TILD LSFT_T(KC_TILD)
-
-#define HM_UNDS RSFT_T(KC_UNDS)
-#define HM_PLUS RCTL_T(KC_PLUS)
-#define HM_LCBR RALT_T(KC_LCBR)
-#define HM_RCBR RGUI_T(KC_RCBR)
-
 // Home row mods tap keys for _NAV
 #define HM_TAB  LGUI_T(KC_TAB)
 #define HM_PGDN LSFT_T(KC_PGDN)
@@ -101,10 +90,11 @@ XXXXXXX, KC_MUTE, KC_VOLD, KC_VOLU, XXXXXXX,     XXXXXXX, KC_BRIU, KC_BRID, XXXX
                            TO_DEF,  _______,     _______, TO_DEF
 ),
 
+// Since mod tap keys can only use regular keycodes, the home row mods are sandwiched between symbols
 [_SYM] = LAYOUT(
 KC_LBRC, KC_RBRC, KC_DQUO, KC_QUOT, XXXXXXX,     KC_SCLN, KC_MINS, KC_EQL , KC_LPRN, KC_RPRN,
-HM_LT,   HM_GT,   HM_GRV,  HM_TILD, KC_BSLS,     KC_PIPE, HM_UNDS, HM_PLUS, HM_LCBR, HM_RCBR,
-XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,     XXXXXXX, KC_RSFT, KC_RCTL, KC_RALT, KC_RGUI,
+KC_LT,   KC_GT,   KC_GRV,  KC_TILD, KC_BSLS,     KC_PIPE, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR,
                            TO_DEF,  _______,     _______, TO_DEF
 ),
 
