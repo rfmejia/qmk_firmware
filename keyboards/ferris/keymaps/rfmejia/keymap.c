@@ -9,24 +9,22 @@ enum layers {
 };
 
 // Home row mod tap keys (GACS)
-#define XT_A LGUI_T(KC_A)
+#define XT_A LT(_SYM, KC_A)
 #define XT_R LALT_T(KC_R)
 #define XT_S LCTL_T(KC_S)
 #define XT_T LSFT_T(KC_T)
 #define XT_N RSFT_T(KC_N)
 #define XT_E RCTL_T(KC_E)
 #define XT_I RALT_T(KC_I)
-#define XT_O RGUI_T(KC_O)
+#define XT_O LT(_SYM, KC_O)
 
 // Home row mod tap keys for _NUM
-#define XT_1 LGUI_T(KC_1)
 #define XT_2 LALT_T(KC_2)
 #define XT_3 LCTL_T(KC_3)
 #define XT_4 LSFT_T(KC_4)
 #define XT_7 RSFT_T(KC_7)
 #define XT_8 RCTL_T(KC_8)
 #define XT_9 RALT_T(KC_9)
-#define XT_0 RGUI_T(KC_0)
 
 // Home row mods tap keys for _NAV
 #define XT_TAB  LGUI_T(KC_TAB)
@@ -61,8 +59,8 @@ enum layers {
 // Layer tap keys
 #define XT_D    LT(_NAV, KC_D)
 #define XT_H    LT(_NAV, KC_H)
-#define XT_Z    LT(_SYM, KC_Z)
-#define XT_SLSH LT(_SYM, KC_SLSH)
+#define XT_Z    LGUI_T(KC_Z)
+#define XT_SLSH RGUI_T(KC_SLSH)
 #define XT_SPC  LT(_NUM, KC_SPC)
 #define XT_BSPC LT(_NUM, KC_BSPC)
 #define XT_ENT  LT(_ADJ, KC_ENT)
@@ -85,23 +83,23 @@ XT_Z,    KC_X,    KC_C,    XT_D,    KC_V,        KC_K,    XT_H,    KC_COMM, KC_D
 
 [_NUM] = LAYOUT(
 KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,     KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,
-XT_1,    XT_2,    XT_3,    XT_4,    KC_5,        KC_6,    XT_7,    XT_8,    XT_9,    XT_0,
-XXXXXXX, KC_MUTE, KC_VOLD, KC_VOLU, XXXXXXX,     XXXXXXX, KC_BRIU, KC_BRID, XXXXXXX, XXXXXXX,
+KC_1,    XT_2,    XT_3,    XT_4,    KC_5,        KC_6,    XT_7,    XT_8,    XT_9,    KC_0,
+KC_LGUI, KC_MUTE, KC_VOLD, KC_VOLU, XXXXXXX,     XXXXXXX, KC_BRIU, KC_BRID, XXXXXXX, KC_RGUI,
                            TO_DEF,  _______,     _______, TO_DEF
 ),
 
 // Since mod tap keys can only use regular keycodes, the home row mods are sandwiched between symbols
 [_SYM] = LAYOUT(
 KC_LBRC, KC_RBRC, KC_DQUO, KC_QUOT, XXXXXXX,     KC_SCLN, KC_MINS, KC_EQL , KC_LPRN, KC_RPRN,
-KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,     XXXXXXX, KC_RSFT, KC_RCTL, KC_RALT, KC_RGUI,
+XXXXXXX, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,     XXXXXXX, KC_RSFT, KC_RCTL, KC_RALT, XXXXXXX,
 KC_LT,   KC_GT,   KC_GRV,  KC_TILD, KC_BSLS,     KC_PIPE, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR,
                            TO_DEF,  _______,     _______, TO_DEF
 ),
 
 [_NAV] = LAYOUT(
 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     KC_DOWN, KC_RGHT, XXXXXXX, KC_INS,  KC_DEL,
-XT_TAB,  KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,     KC_HOME, XT_PGDN, XT_PGUP, XT_END,  KC_RGUI,
-XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     KC_UP,   KC_LEFT, XXXXXXX, XXXXXXX, XXXXXXX,
+KC_TAB,  KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,     KC_HOME, XT_PGDN, XT_PGUP, XT_END,  XXXXXXX,
+KC_LGUI, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     KC_UP,   KC_LEFT, XXXXXXX, XXXXXXX, KC_RGUI,
                            TO_DEF,  _______,     _______, TO_DEF
 ),
 
