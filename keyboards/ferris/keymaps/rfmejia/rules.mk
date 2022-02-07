@@ -1,3 +1,3 @@
 BOOTLOADER = atmel-dfu
 
-COMBO_ENABLE = no
+COMBO_ENABLE = yes
