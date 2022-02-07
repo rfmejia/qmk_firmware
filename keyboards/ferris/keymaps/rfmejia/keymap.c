@@ -90,9 +90,9 @@ KC_LGUI, KC_MUTE, KC_VOLD, KC_VOLU, XXXXXXX,     XXXXXXX, KC_BRIU, KC_BRID, XXXX
 
 // Since mod tap keys can only use regular keycodes, the home row mods are sandwiched between symbols
 [_SYM] = LAYOUT(
-KC_LBRC, KC_RBRC, KC_DQUO, KC_QUOT, XXXXXXX,     KC_SCLN, KC_MINS, KC_EQL , KC_LPRN, KC_RPRN,
+KC_LCBR, KC_RCBR, KC_DQUO, KC_QUOT, XXXXXXX,     KC_SCLN, KC_MINS, KC_EQL , KC_LPRN, KC_RPRN,
 XXXXXXX, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,     XXXXXXX, KC_RSFT, KC_RCTL, KC_RALT, XXXXXXX,
-KC_LT,   KC_GT,   KC_GRV,  KC_TILD, KC_BSLS,     KC_PIPE, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR,
+KC_LBRC, KC_RBRC, KC_GRV,  KC_TILD, KC_BSLS,     KC_PIPE, KC_UNDS, KC_PLUS, KC_LT,   KC_GT,
                            TO_DEF,  _______,     _______, TO_DEF
 ),
 
