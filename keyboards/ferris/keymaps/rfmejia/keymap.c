@@ -72,6 +72,28 @@ enum layers {
 #define TO_SYM TO(_SYM)
 #define TO_NAV TO(_NAV)
 
+// Custom symbol macros
+enum custom_keycodes {
+  M_LARR = SAFE_RANGE,
+  M_RARR,
+};
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+    case M_LARR:
+        if (record->event.pressed) {
+            SEND_STRING("<- ");
+        }
+        break;
+    case M_RARR:
+        if (record->event.pressed) {
+            SEND_STRING("=> ");
+        }
+        break;
+    }
+  return true;
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_DEF] =  LAYOUT(
@@ -90,7 +112,7 @@ KC_LGUI, KC_MUTE, KC_VOLD, KC_VOLU, KC_F11,      KC_F12,  KC_BRIU, KC_BRID, XXXX
 ),
 
 [_SYM] = LAYOUT(
-KC_LT,   KC_GT,   KC_DQUO, KC_QUOT, XXXXXXX,     XXXXXXX, KC_MINS, KC_EQL , XXXXXXX, KC_SCLN,
+KC_LT,   KC_GT,   KC_DQUO, KC_QUOT, M_LARR,      M_RARR,  KC_MINS, KC_EQL , XXXXXXX, KC_SCLN,
 KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,     KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,
 KC_LBRC, KC_RBRC, KC_GRV,  KC_TILD, KC_BSLS,     KC_PIPE, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR,
                            TO_DEF,  _______,     _______, TO_DEF
