@@ -109,11 +109,10 @@ XT_Z,    KC_X,    KC_C,    XT_D,    KC_V,        KC_K,    XT_H,    KC_COMM, KC_D
                            XT_ENT,  XT_BSPC,     XT_SPC,  XT_ESC
 ),
 
-// KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,     KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,
 [_NUM] = LAYOUT(
 KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,       KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,
 KC_1,    XT_2,    XT_3,    XT_4,    KC_5,        KC_6,    XT_7,    XT_8,    XT_9,    KC_0,
-KC_LGUI, KC_MUTE, KC_VOLD, KC_VOLU, KC_F11,      KC_F12,  KC_BRIU, KC_BRID, XXXXXXX, XXXXXXX,
+KC_F11,  KC_F12,  KC_MUTE, KC_VOLD, KC_VOLU,     KC_BRIU, KC_BRID, KC_COMM, KC_DOT,  XXXXXXX,
                            TO_DEF,  _______,     _______, TO_DEF
 ),
 
