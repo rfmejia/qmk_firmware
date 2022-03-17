@@ -15,7 +15,7 @@ enum layers {
 #define XT_T LSFT_T(KC_T)
 #define XT_N RSFT_T(KC_N)
 #define XT_E RCTL_T(KC_E)
-#define XT_I RALT_T(KC_I)
+#define XT_I LALT_T(KC_I)
 #define XT_O LT(_SYM, KC_O)
 
 // Home row mod tap keys for _NUM
@@ -24,7 +24,7 @@ enum layers {
 #define XT_4 LSFT_T(KC_4)
 #define XT_7 RSFT_T(KC_7)
 #define XT_8 RCTL_T(KC_8)
-#define XT_9 RALT_T(KC_9)
+#define XT_9 LALT_T(KC_9)
 
 // Home row mods tap keys for _NAV
 #define XT_TAB  LGUI_T(KC_TAB)
@@ -83,12 +83,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
     case M_LARR:
         if (record->event.pressed) {
-            SEND_STRING(" <- ");
+            SEND_STRING("<-");
         }
         break;
     case M_RARR:
         if (record->event.pressed) {
-            SEND_STRING(" => ");
+            SEND_STRING("=>");
         }
         break;
     case M_BOX:
