@@ -103,7 +103,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_DEF] =  LAYOUT(
-KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,        KC_J,    KC_L,    KC_U,    KC_Y,    KC_COLN,
+KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,        KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,
 XT_A,    XT_R,    XT_S,    XT_T,    KC_G,        KC_M,    XT_N,    XT_E,    XT_I,    XT_O,
 XT_Z,    KC_X,    KC_C,    XT_D,    KC_V,        KC_K,    XT_H,    KC_COMM, KC_DOT,  XT_SLSH,
                            XT_ENT,  XT_BSPC,     XT_SPC,  XT_ESC
@@ -117,7 +117,7 @@ KC_F11,  KC_F12,  KC_MUTE, KC_VOLD, KC_VOLU,     KC_BRIU, KC_BRID, KC_COMM, KC_D
 ),
 
 [_SYM] = LAYOUT(
-KC_LT,   KC_GT,   KC_DQUO, KC_QUOT, M_LARR,      M_RARR,  KC_MINS, KC_EQL , M_BOX,   KC_SCLN,
+KC_LT,   KC_GT,   KC_DQUO, KC_QUOT, M_LARR,      M_RARR,  KC_MINS, KC_EQL , XXXXXXX, M_BOX,
 KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,     KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,
 KC_LBRC, KC_RBRC, KC_GRV,  KC_TILD, KC_BSLS,     KC_PIPE, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR,
                            TO_DEF,  _______,     _______, TO_DEF
