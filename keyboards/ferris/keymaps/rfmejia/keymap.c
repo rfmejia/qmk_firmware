@@ -1,7 +1,7 @@
 #include QMK_KEYBOARD_H
 
 enum layers {
-    _DEF, // Default Colemak layoup
+    _DEF, // Default Colemak layout
     _NUM, // Numbers (including shifted-number symbols)
     _SYM, // Symbols
     _NAV, // Navigation keys
@@ -117,9 +117,9 @@ KC_F11,  KC_F12,  KC_MUTE, KC_VOLD, KC_VOLU,     KC_BRIU, KC_BRID, KC_COMM, KC_D
 ),
 
 [_SYM] = LAYOUT(
-KC_LT,   KC_GT,   KC_DQUO, KC_QUOT, M_LARR,      M_RARR,  KC_MINS, KC_EQL , XXXXXXX, M_BOX,
+KC_LT,   KC_GT,   KC_DQUO, KC_QUOT, M_LARR,      M_RARR,  KC_MINS, KC_EQL,  KC_LCBR, KC_RCBR,
 KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,     KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,
-KC_LBRC, KC_RBRC, KC_GRV,  KC_TILD, KC_BSLS,     KC_PIPE, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR,
+M_BOX,   XXXXXXX, KC_GRV,  KC_TILD, KC_BSLS,     KC_PIPE, KC_UNDS, KC_PLUS, KC_LBRC, KC_RBRC,
                            TO_DEF,  _______,     _______, TO_DEF
 ),
 

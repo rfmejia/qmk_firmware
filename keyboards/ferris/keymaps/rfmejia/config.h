@@ -39,9 +39,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Prevent short hold periods being interpreted as individual taps when typing quickly
 #define PERMISSIVE_HOLD
 
-// Prevent normal rollover on alphas from accidentally triggering home row mods
-#define IGNORE_MOD_TAP_INTERRUPT
-
 // Prevent accidental repeats of the tap-hold keys when typing quickly
 #define TAPPING_FORCE_HOLD
 
