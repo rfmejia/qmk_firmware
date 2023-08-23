@@ -17,32 +17,12 @@
 #include QMK_KEYBOARD_H
 
 // clang-format off
-/* const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = { */
-
-/*     [0] = LAYOUT( */
-/*         KC_Q, KC_W, KC_F, KC_P, KC_B, KC_ESC , KC_BSPC, KC_J, KC_L, KC_U, KC_Y, KC_SCLN, */
-/*         KC_A, KC_R, KC_S, KC_T, KC_G, KC_TAB , KC_ENT , KC_M, KC_N, KC_E, KC_I, KC_O, */
-/*         KC_Z, KC_X, KC_C, KC_D, KC_V, KC_LSFT, KC_SLSH, KC_K, KC_H, KC_COMM, KC_DOT, KC_UP, */
-/*         KC_LCTL, KC_PGDN, KC_LALT, KC_DEL, MO(2), KC_SPC, KC_PGUP, MO(1), KC_LEFT, KC_DOWN, KC_RGHT), */
-
-/*     [1] = LAYOUT( */
-/*         KC_TRNS, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, RGB_MOD, */
-/*         KC_TRNS, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_TRNS, */
-/*         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_MSTP, KC_MUTE, KC_MPRV, KC_MPLY, KC_MNXT, RGB_VAI, KC_TRNS, */
-/*         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, RGB_VAD, KC_TRNS), */
-
-/*     [2] = LAYOUT( */
-/*         KC_ESC, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_BSPC, */
-/*         KC_CAPS, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_TRNS, */
-/*         KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_UP, KC_SLSH, */
-/*         KC_LCTL, KC_NO, KC_LALT, KC_DEL, KC_PGDN, KC_SPC, KC_PGUP, KC_NO, KC_LEFT, KC_DOWN, KC_RGHT) */
-/* }; */
-
 enum layers {
     _DEF, // Default Colemak layout
     _NUM, // Numbers (including shifted-number symbols)
     _SYM, // Symbols
     _NAV, // Navigation keys
+    _TAB, // Modifier+tab keys
     _ADJ  // System and layer-hold keys
 };
 
@@ -94,9 +74,15 @@ enum layers {
 #define LALT_9 LALT(KC_9)
 #define LALT_0 LALT(KC_0)
 
+// Modifier+tab keys
+#define TAB_SFT LSFT(KC_TAB)
+#define TAB_CTL LCTL(KC_TAB)
+#define TAB_ALT LALT(KC_TAB)
+#define TAB_GUI LGUI(KC_TAB)
+
 // Layer tap keys
 #define XT_D    LT(_NAV, KC_D)
-#define XT_H    LT(_NAV, KC_H)
+#define XT_H    LT(_TAB, KC_H)
 #define XT_Z    LGUI_T(KC_Z)
 #define XT_SLSH RGUI_T(KC_SLSH)
 #define XT_SPC  LT(_NUM, KC_SPC)
@@ -109,6 +95,7 @@ enum layers {
 #define TO_NUM TO(_NUM)
 #define TO_SYM TO(_SYM)
 #define TO_NAV TO(_NAV)
+#define TO_TAB TO(_TAB)
 
 // Custom symbol macros
 enum custom_keycodes {
@@ -141,7 +128,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_DEF] =  LAYOUT(
-KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    XXXXXXX, XXXXXXX, KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,
+KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    RGB_TOG, RGB_M_P, KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,
 XT_A,    XT_R,    XT_S,    XT_T,    KC_G,    XXXXXXX, XXXXXXX, KC_M,    XT_N,    XT_E,    XT_I,    XT_O,
 XT_Z,    KC_X,    KC_C,    XT_D,    KC_V,    XXXXXXX, XXXXXXX, KC_K,    XT_H,    KC_COMM, KC_DOT,  XT_SLSH,
 XXXXXXX, XXXXXXX, XXXXXXX, XT_ENT,  XT_BSPC,     RGB_MOD,      XT_SPC,  XT_ESC,  XXXXXXX, XXXXXXX, XXXXXXX
@@ -163,16 +150,23 @@ XXXXXXX, XXXXXXX, XXXXXXX, TO_DEF,  _______,     XXXXXXX,      _______, TO_DEF, 
 
 [_NAV] = LAYOUT(
 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_DOWN, KC_RGHT, XXXXXXX, KC_INS,  KC_DEL,
-KC_TAB,  KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, KC_HOME, XT_PGDN, XT_PGUP, XT_END,  XXXXXXX,
+KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_HOME, XT_PGDN, XT_PGUP, XT_END,  XXXXXXX,
 KC_LGUI, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_UP,   KC_LEFT, XXXXXXX, XXXXXXX, KC_RGUI,
+XXXXXXX, XXXXXXX, XXXXXXX, TO_DEF,  _______,     XXXXXXX,      _______, TO_DEF,  XXXXXXX, XXXXXXX, XXXXXXX
+),
+
+[_TAB] = LAYOUT(
+XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+KC_TAB,  TAB_ALT, TAB_CTL, TAB_SFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+TAB_GUI, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 XXXXXXX, XXXXXXX, XXXXXXX, TO_DEF,  _______,     XXXXXXX,      _______, TO_DEF,  XXXXXXX, XXXXXXX, XXXXXXX
 ),
 
 [_ADJ] = LAYOUT(
 LALT_1,  LALT_2,  LALT_3,  LALT_4,  LALT_5,  XXXXXXX, XXXXXXX, LALT_6,  LALT_7,  LALT_8,  LALT_9,  LALT_0,
 LGUI_1,  LGUI_2,  LGUI_3,  LGUI_4,  LGUI_5,  XXXXXXX, XXXXXXX, LGUI_6,  LGUI_7,  LGUI_8,  LGUI_9,  LGUI_0,
-TO_SYM,  XXXXXXX, XXXXXXX, TO_NAV,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TO_NAV,  XXXXXXX, XXXXXXX, TO_SYM,
-XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TO_NUM,      XXXXXXX,      TO_NUM,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+TO_SYM,  XXXXXXX, XXXXXXX, TO_NAV,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TO_TAB,  XXXXXXX, XXXXXXX, TO_SYM,
+XXXXXXX, XXXXXXX, XXXXXXX, KC_LGUI, TO_NUM,      XXXXXXX,      TO_NUM,  KC_RGUI, XXXXXXX, XXXXXXX, XXXXXXX
 )
 };
 // clang-format on

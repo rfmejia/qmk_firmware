@@ -5,6 +5,7 @@ enum layers {
     _NUM, // Numbers (including shifted-number symbols)
     _SYM, // Symbols
     _NAV, // Navigation keys
+    _TAB, // Modifier+tab keys
     _ADJ  // System and layer-hold keys
 };
 
@@ -56,9 +57,15 @@ enum layers {
 #define LALT_9 LALT(KC_9)
 #define LALT_0 LALT(KC_0)
 
+// Modifier+tab keys
+#define TAB_SFT LSFT(KC_TAB)
+#define TAB_CTL LCTL(KC_TAB)
+#define TAB_ALT LALT(KC_TAB)
+#define TAB_GUI LGUI(KC_TAB)
+
 // Layer tap keys
 #define XT_D    LT(_NAV, KC_D)
-#define XT_H    LT(_NAV, KC_H)
+#define XT_H    LT(_TAB, KC_H)
 #define XT_Z    LGUI_T(KC_Z)
 #define XT_SLSH RGUI_T(KC_SLSH)
 #define XT_SPC  LT(_NUM, KC_SPC)
@@ -71,6 +78,7 @@ enum layers {
 #define TO_NUM TO(_NUM)
 #define TO_SYM TO(_SYM)
 #define TO_NAV TO(_NAV)
+#define TO_TAB TO(_TAB)
 
 // Custom symbol macros
 enum custom_keycodes {
@@ -125,16 +133,23 @@ M_BOX,   XXXXXXX, KC_GRV,  KC_TILD, KC_BSLS,     KC_PIPE, KC_UNDS, KC_PLUS, KC_L
 
 [_NAV] = LAYOUT(
 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     KC_DOWN, KC_RGHT, XXXXXXX, KC_INS,  KC_DEL,
-KC_TAB,  KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,     KC_HOME, XT_PGDN, XT_PGUP, XT_END,  XXXXXXX,
+KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX, XXXXXXX,     KC_HOME, XT_PGDN, XT_PGUP, XT_END,  XXXXXXX,
 KC_LGUI, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     KC_UP,   KC_LEFT, XXXXXXX, XXXXXXX, KC_RGUI,
+                           TO_DEF,  _______,     _______, TO_DEF
+),
+
+[_TAB] = LAYOUT(
+XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+KC_TAB,  TAB_ALT, TAB_CTL, TAB_SFT, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+TAB_GUI, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                            TO_DEF,  _______,     _______, TO_DEF
 ),
 
 [_ADJ] = LAYOUT(
 LALT_1,  LALT_2,  LALT_3,  LALT_4,  LALT_5,      LALT_6,  LALT_7,  LALT_8,  LALT_9,  LALT_0,
 LGUI_1,  LGUI_2,  LGUI_3,  LGUI_4,  LGUI_5,      LGUI_6,  LGUI_7,  LGUI_8,  LGUI_9,  LGUI_0,
-TO_SYM,  XXXXXXX, XXXXXXX, TO_NAV,  XXXXXXX,     XXXXXXX, TO_NAV,  XXXXXXX, XXXXXXX, TO_SYM,
-                           XXXXXXX, TO_NUM,      TO_NUM,  XXXXXXX
+TO_SYM,  XXXXXXX, XXXXXXX, TO_NAV,  XXXXXXX,     XXXXXXX, TO_TAB,  XXXXXXX, XXXXXXX, TO_SYM,
+                           KC_LGUI, TO_NUM,      TO_NUM,  KC_RGUI
 )
 };
 

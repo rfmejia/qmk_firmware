@@ -19,6 +19,13 @@ custom_util/docker_build.sh inland/mk47:default
 custom_util/docker_build.sh inland/mk47:default:flash
 ```
 
+For split keyboards, run
+
+```bash
+custom_util/docker_build.sh ferris/sweep:default:dfu-split-left
+custom_util/docker_build.sh ferris/sweep:default:dfu-split-right
+```
+
 ## Troubleshooting
 
 - "Cannot open DFU device xxxx:yyyy found on devnum zz (LIBUSB_ERROR_ACCESS)"
