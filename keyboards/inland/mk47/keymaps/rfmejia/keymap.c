@@ -129,7 +129,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_DEF] =  LAYOUT(
 KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    RGB_TOG, RGB_M_P, KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,
-XT_A,    XT_R,    XT_S,    XT_T,    KC_G,    XXXXXXX, XXXXXXX, KC_M,    XT_N,    XT_E,    XT_I,    XT_O,
+XT_A,    XT_R,    XT_S,    XT_T,    KC_G,    RGB_HUI, XXXXXXX, KC_M,    XT_N,    XT_E,    XT_I,    XT_O,
 XT_Z,    KC_X,    KC_C,    XT_D,    KC_V,    XXXXXXX, XXXXXXX, KC_K,    XT_H,    KC_COMM, KC_DOT,  XT_SLSH,
 XXXXXXX, XXXXXXX, XXXXXXX, XT_ENT,  XT_BSPC,     RGB_MOD,      XT_SPC,  XT_ESC,  XXXXXXX, XXXXXXX, XXXXXXX
 ),
